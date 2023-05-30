@@ -1,0 +1,10 @@
+{% for song in songs %}
+    <h2>{{ song.title }}</h2>
+    <p>Artist: {{ song.artist }}</p>
+    <p>Genre: {{ song.genre }}</p>
+    <audio controls>
+        <source src="{{ song.audio_file.url }}" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <hr>
+{% endfor %}

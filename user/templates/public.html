@@ -1,0 +1,14 @@
+<h2>Public Music</h2>
+<ul>
+  {% for music in public_music %}
+    <li>
+      {{ music.title }} - {{ music.artist }}
+      <audio controls>
+        <source src="{{ music.audio_file.url }}" type="audio/mp3">
+        Your browser does not support the audio element.
+      </audio>
+    </li>
+  {% empty %}
+    <li>No public music files available.</li>
+  {% endfor %}
+</ul>

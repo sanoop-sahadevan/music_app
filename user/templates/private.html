@@ -1,0 +1,14 @@
+<h2>Private Music</h2>
+<ul>
+  {% for music in private_music %}
+    <li>
+      {{ music.title }} - {{ music.artist }}
+      <audio controls>
+        <source src="{{ music.audio_file.url }}" type="audio/mp3">
+        Your browser does not support the audio element.
+      </audio>
+    </li>
+  {% empty %}
+    <li>No private music files available.</li>
+  {% endfor %}
+</ul>
